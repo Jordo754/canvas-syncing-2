@@ -84,6 +84,7 @@
         const loadRoom = (data) => {
           if (data.code === 0) {
             room = data.room;
+            canvas.onclick = () => {};
           } else if (data.code === 1) {
             ctx.save();
             ctx.fillStyle = 'red';
@@ -120,8 +121,8 @@
           ctx.fillText('Join', 250, 255);
           
           canvas.addEventListener('click', () =>{
-            if (e.pageX - e.target.offsetLeft > 200 && e.pageX - e.target.offsetLeft  > 200) {
-              ioInit
+            if (e.pageX - e.target.offsetLeft > 200 && e.pageX - e.target.offsetLeft < 300 && e.pageY - e.target.offsetTop > 230 && e.pageY - e.target.offsetTop < 270) {
+              ioInit();
             }
           });
         };
